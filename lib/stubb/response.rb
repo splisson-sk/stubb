@@ -14,6 +14,9 @@ module Stubb
       @header = header
 
       process_yaml
+      
+      self.header['Access-Control-Allow-Origin'] = '*'
+      
       render_template
 
       super self.body, self.status, self.header
